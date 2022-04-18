@@ -27,12 +27,14 @@ function delay(milsec) {
 
 const getAverage_test = () => { 
     const t = new Tracker(2000) // Set the time window to 2 seconds ( rather than 5 minutes ))  
-    // These should not be counted...   ...
+    // These should not be counted...  ( too old )
     for ( let i = 0 ; i < 10 ; i++ ) {
         t.addDataPoint(100)
     }
     delay(4000)
     .then(() => {
+
+        // These should be counted... ( still in the window )
         for ( let i = 0 ; i < 10 ; i++ ) {
             t.addDataPoint(2)
         }
