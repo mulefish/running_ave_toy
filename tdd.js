@@ -39,9 +39,8 @@ const getAverage_test = () => {
             t.addDataPoint(2)
         }
     })
-    .then(() => t.getAverage())
     .then(()=>{
-        verdict(2,t.getAverage(),"getAverage_test")
+        verdict(t.getAverage(),2, "getAverage_test")
     })
 } 
 
